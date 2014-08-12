@@ -1,5 +1,6 @@
 <h1>Edit your task :</h1>
 <p>Just edit it</p>
+
 <%= form_for(@task) do |t| %>
 
   <%= t.label :title %>
@@ -7,9 +8,7 @@
 
   <%= t.label :description %>
   <%= t.text_field :description %>
-
-  <%= t.label :status %>
-  <%= t.hidden_field :status, :value => "ToDo" %>
+  <%= t.select :status, options_for_select([['todo' ,'todo'], ['running', 'running'], ['done', 'done']]) %>
 
   <%= t.submit %>
 

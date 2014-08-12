@@ -1,8 +1,24 @@
-<h1>My tasks :</h1>
+<h1>Welcome on your ToDo tasks manager</h1>
 
-<div class=“notice »>
-     <%= flash[:notif] %>
-</div>
+
+<h2>Quick links</h2>
+<nav>
+  <%= link_to "view all tasks list", tasks_path %>
+  <%= link_to "create a new task", new_task_path %>
+</nav>
+
+<h2>Create a task :</h2>
+
+<%= form_for(@task) do |t| %>
+  <%= t.label :title %>
+  <%= t.text_field :title %>
+  <%= t.label :description %>
+  <%= t.text_field :description %>
+  <%= t.label :status %>
+  <%= t.submit %>
+<% end %>
+
+<h2>Your tasks list :</h2>
 
 <ul>
   <% @tasks.each do |task| %>
