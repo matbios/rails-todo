@@ -1,0 +1,16 @@
+<h1>Create a new task :</h1>
+<p>What task do you want to add to your ToDo list ?</p>
+<%= form_for(@task) do |t| %>
+
+  <%= t.label :title %>
+  <%= t.text_field :title %>
+
+  <%= t.label :description %>
+  <%= t.text_field :description %>
+
+  <%= t.label :status %>
+  <%= t.hidden_field :status, :value => "ToDo" %>
+
+  <%= t.submit %>
+
+<% end %>
